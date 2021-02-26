@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+
+function action(messages)
+{
+	$("form").submit(function(event) {
+		event.preventDefault();
+		var form=$(this);
+		form.find(".info").load("answer.php", {
+			message: form.find("#message").val(),
+			to_user: form.find("#to_user").val(),
+			which_answer: form.find(".next").attr("id"),
+			reply: form.find("#reply").val(),
+			send: form.find("#message-send").val(),
+			state: messages
+		}, function() {
+			form.find(".info").css({"visibility":"visible"}).animate({
+				opacity: 1
+			}, 1000);
+		});
+	});
+}
+
+</script>
+
+</body>
+</html>

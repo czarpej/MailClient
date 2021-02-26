@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+
+	$("[value=answer]").on("click", function() {
+		$(this).parent().parent().parent().next().slideToggle();
+	});
+	
+	$("[value=delete]").on("click", function() {
+		$(this).parent().submit(function(event) {
+			event.preventDefault();
+			var form=$(this);
+			var info=$(this).parent().parent().parent().find(".message-info");
+			info.load("delete.php", {
+				which_message: form.find(".next_message").attr("id"),
+				id_message: form.find("#message_id").val(),
+				delete: form.find("button").val()
+			});
+		});
+	});
+
+	$(".changing").on("click", function() {
+		$(this).parent().submit(function(event) {
+			event.preventDefault();
+			var form=$(this);
+			var info=$(this).parent().parent().parent().find(".changing-info");
+			info.load("change_tag.php", {
+				which_message_tag: form.find(".next_message").attr("id"),
+				id_message: form.find("#message_id").val(),
+				tag: form.find("button").val()
+			});
+		});
+	});
+
+</script>
+
+</body>
+</html>

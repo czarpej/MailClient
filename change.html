@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../../jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#change_password").submit(function(event) {
+				event.preventDefault();
+				$(".info").load("change_password.php", {
+					actual_password: $("#actual-pass").val(),
+					new_password: $("#new-pass").val(),
+					repeat_password: $("#repeat-pass").val(),
+					change: $("#change-pass").val()
+				}, function() {
+					$(".info").css({"visibility":"visible"}).animate({
+						opacity: 1
+					}, 1000);
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="change_password">
+		<form id="change_password" method="post">
+			<input type="password" class="pass_to_change" placeholder="Actual password" id="actual-pass" autocomplete="off">
+			<input type="password" class="pass_to_change" placeholder="New password" id="new-pass" autocomplete="off">
+			<input type="password" class="pass_to_change" placeholder="Repeat password" id="repeat-pass" autocomplete="off">
+			<button id="change-pass">Change</button>
+			<p class="info">info</p>
+		</form>
+	</div>
+
+</body>
+</html>

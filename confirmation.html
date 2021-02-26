@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../../jquery-3.3.1.min.js"></script>
+	<script src="return_index.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#confirm_remove").submit(function(event) {
+				event.preventDefault();
+				$(".info").load("remove_account.php", {
+					actual_password: $("#pass-to-confirm").val(),
+					remove: $("#confirm-remove").val()
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="remove_account">
+		<form id="confirm_remove">
+			<p>Are you sure that you want remove your accout? You must confirm this operation.</p>
+			<input type="password" class="pass_to_change" id="pass-to-confirm" placeholder="Actual password" autocomplete="off">
+			<button id="confirm-remove">Delete</button>
+			<p class="info">info</p>
+		</form>
+	</div>
+
+</body>
+</html>

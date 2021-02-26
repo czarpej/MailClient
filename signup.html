@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="../../jquery-3.3.1.min.js"></script>
+	<script src="return_index.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#cancel_register").on("click", function() {
+				return_index("index_content.html");
+			});
+			$("#form_register").submit(function(event) {
+				event.preventDefault();
+				$(".info_message").load("register.php", {
+					username: $("#username").val(),
+					email: $("#email").val(),
+					password: $("#password").val(),
+					repeat_password: $("#repeat_password").val(),
+					recaptcha_response: grecaptcha.getResponse(),
+					register: $("#signup").val()
+				}, function() {
+					$(".info").css({"visibility":"visible"}).animate({
+						opacity: 1
+					}, 1000);
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="register">
+		<div class="service_info">Registration to Eora</div>
+		<div class="register_data">
+			<form id="form_register" method="post">
+				<span class="required">*</span><input type="text" id="username" class="input-register" placeholder="Username"><br>
+				<span class="required">*</span><input type="email" id="email" class="input-register" placeholder="E-mail"><br>
+				<span class="required">*</span><input type="password" id="password" class="input-register" placeholder="Password"><br>
+				<span class="required">*</span><input type="password" id="repeat_password" class="input-register" placeholder="Repeat password"><br>
+				<div class="g-recaptcha" data-sitekey="6Lcf_4MUAAAAAM0HiPAgLJs4eyVLfcMczbC2VZP8"></div>
+				<button id="signup">Sign in</button>
+			</form>
+			<div class="signup">
+				<button id="cancel_register">Log in</button>
+			</div>
+		</div>
+		<div class="info">
+			<hr>
+			<p class="info_message">info</p>
+		</div>
+	</div>
+
+	<!--
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    -->
+
+</body>
+</html>

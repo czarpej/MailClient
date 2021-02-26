@@ -1,0 +1,404 @@
+html, body
+{
+	background-image: url("img/background_body.png");
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+.container
+{
+	padding: 60px 30px;
+	background-color: #ECECEC;
+
+}
+
+.service_info, .login_data, .register_data
+{
+	padding: 5px;
+	text-align: center;
+	width: 300px;
+}
+
+.service_info
+{
+	font-size: 24px;
+	font-weight: 700;
+	border-bottom: 1px solid #363636;
+}
+
+.login_data, .register_data
+{
+	margin-top: 10px;
+}
+
+.login_data #login, .login_data #password, .pass_to_change, .input-register
+{
+	margin-bottom: 5px;
+	padding: 5px;
+	outline: none;
+	border: 1px solid transparent;
+	transition: 0.3s all ease-out;
+	background-color: #f3cd69;
+	border-radius: 2px;
+}
+
+.login_data #login:hover, .login_data #login:focus, .login_data #password:hover, .login_data #password:focus
+{
+	border-color: #4090da;
+	background-color: #eaeaea; 
+}
+
+.login_data button, .logout button, .manage button, .register_data button, .message-option button, .answer-inner button, .read-messages-button
+{
+	padding: 5px;
+	font-size: 16px;
+	font-weight: 700;
+	background-color: #8e1a1a;
+	color: #ececec;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	width: 80%;
+	margin-left: auto;
+	margin-top: 10px;
+	cursor: pointer;
+	transition: 0.3s all ease-out;
+	outline: none;
+}
+
+.logout button
+{
+	width: 150px;
+	margin: 0;
+}
+
+.message-option
+{
+	display: flex;
+	justify-content: center;
+}
+
+.message-option form
+{
+	max-width: 161.5px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.message-option form button
+{
+	width: 100%;
+	height: 100%;
+}
+
+.message-option button, .answer-inner button
+{
+	transform: scale(0.7);
+	max-width: 150px;
+	margin: 0;
+}
+
+div .signup
+{
+	display: flex;
+	justify-content: flex-end;
+	padding: 0;
+}
+
+.login_data button:hover, .logout button:hover, .register_data button:hover, .message-option button:hover, .answer-inner button:hover, .read-messages-button:hover
+{
+	background-color: #9f2b2b;
+}
+
+.signup button, #cancel_register
+{
+	-webkit-transform: scale(0.5);
+	   -moz-transform: scale(0.5);
+	    -ms-transform: scale(0.5);
+	     -o-transform: scale(0.5);
+	        transform: scale(0.5);	
+	margin: 0;
+	width: 150px;
+}
+
+.info
+{
+	visibility: hidden;
+	opacity: 0;
+	text-align: center;
+}
+
+.info-error
+{
+	color: red;
+}
+
+.info-ok
+{
+	color: green;
+}
+
+.required
+{
+	color: #4090da;
+	margin-right: 5px;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.input-error
+{
+	box-shadow: 0 0 5px red;
+}
+
+.logging_user
+{
+	transition: 0.3s all ease-out-line;
+	width: 80vw;
+	height: 100%;
+}
+
+.content
+{
+	display: flex;
+}
+
+.messages-div, .manage
+{
+	flex: 50%;
+	padding: 10px;
+}
+
+.messages-div h3, .manage h3
+{
+	margin-top: 0;
+}
+
+.message
+{
+	padding: 10px;
+	background-color: white;
+	box-shadow: 1px 1px 11px 1px #8e1a1a;
+	/*border: 1px solid #8e1a1a;*/
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.manage
+{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	border-left: 1px solid #0003;
+}
+
+.manage button
+{
+	border-radius: 25px;
+	width: 50%;
+	margin-right: auto;
+	background-color: white;
+	color: black;
+	border: 1px solid #8e1a1a;
+	transition: 0.3s all ease-out-line;
+}
+
+.manage button:hover
+{
+	border: 1px solid transparent;
+	box-shadow: 1px 1px 11px 1px #8e1a1a;
+}
+
+.manage button:active
+{
+	/*box-shadow: 1px 1px 3px 3px #8e1a1a;*/
+	background-color: #8e1a1a;
+	color: #ececec;
+}
+
+.logout
+{
+	text-align: right;
+	width: 100%;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #0003;
+	margin-bottom: 15px;
+}
+
+.changes
+{
+	display: none;
+	padding: 10px;
+	box-shadow: 1px 1px 11px 1px #8e1a1a;
+	margin-top: 10px;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.changes2
+{
+	display: flex;
+	justify-content: center;
+}
+
+.change_password form, .remove_account form
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.change_password button, .remove_account button
+{
+	width: 60%;
+}
+
+.change_password, .remove_account
+{
+	width: 60%;
+	
+}
+
+#confirm_remove p
+{
+	font-size: 14px;
+}
+
+@media (max-width: 850px)
+{
+	.content
+	{
+		flex-direction: column;
+	}
+
+	.messages-div, .manage
+	{
+		flex: 100%;
+	}
+
+	.manage
+	{
+		border-left: 0;
+		border-top: 1px solid #0003;
+	}
+
+	.logging_user
+	{
+		height: 100%;
+	}
+}
+
+@media (max-width: 520px)
+{
+	html, body
+	{
+		margin: 0;
+		display: block;
+	}
+
+	.container
+	{
+		padding: 10px 10px !important;
+	}
+
+	.logging_user
+	{
+		width: calc(100vw - 30px);
+	}
+}
+
+.answer
+{
+	display: none;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.answer-inner
+{
+	padding: 10px;
+	box-shadow: 1px 1px 11px 1px #1a488e;
+	border: 1px solid #1a488e;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+}
+
+.answer-inner textarea
+{
+	font-family: sans-serif;
+	font-size: 12px;
+	width: 60%;
+	max-width: 300px;
+	height: 100px;
+	outline: none;
+	box-shadow: 0;
+}
+
+.answer-inner form
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 100%;
+}
+
+.messages-info
+{
+	display: flex;
+	align-items: flex-start;
+}
+
+.read-messages-button
+{
+	margin-left: auto;
+	width: auto;
+	font-size: 14px;
+	margin-top: 0;
+}
+
+.message-info
+{
+	display: none;
+	text-align: center;
+}
+
+.inner-message
+{
+	position: relative;
+}
+
+.message-date
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.message-content
+{
+	margin-bottom: 12px;
+}
+
+.message-content-inner
+{
+	border: 1px solid #ACACAC;
+	padding: 5px;
+	margin-top: 2px;
+}
+
+.delete-info, .changing-info
+{
+	display: none;
+}

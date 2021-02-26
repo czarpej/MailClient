@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+	//----------manage account div slideToggle----------
+	$("#change").on("click", function() {
+		check_slideToggle($(".changes").children(), $(this));
+	});
+	$("#remove").on("click", function() {
+		check_slideToggle($(".changes").children(), $(this));
+	});
+	
+	var isVisible=false;
+	var prev_button="";
+	var load=""
+
+	function check_slideToggle(children, button)
+	{
+		if(button.attr("id")=="change")
+			load="change.html";
+		if(button.attr("id")=="remove")
+			load="confirmation.html";
+
+		if(isVisible==true)
+		{
+			if(prev_button.attr("id")==button.attr("id"))
+			{
+				children.parent().slideUp();
+				isVisible=false;
+				prev_button="";
+			}
+			else
+			{
+				children.parent().slideUp(function() {
+					children.load(load).parent().slideDown(function() {
+						isVisible=true;
+						prev_button=button;
+					});
+				});
+			}
+		}
+		else
+		{
+			children.load(load).parent().slideDown();
+			isVisible=true;
+			prev_button=button;
+		}
+	}
+	//----------end----------
+	</script>
+
+</body>
+</html>
